@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Button from '../components/Button';
+import FetchData from './FetchData';
 
 class Table extends Component {
   render() {
@@ -8,7 +8,9 @@ class Table extends Component {
         <table>
           <thead></thead>
           <tbody>
-            <Button />
+            <tr>
+              <FetchData />
+            </tr>
           </tbody>
         </table>
       </div>
