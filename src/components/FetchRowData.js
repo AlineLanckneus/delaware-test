@@ -1,7 +1,7 @@
 import React from 'react';
 import InsertDataInTable from './InsertDataInTable';
 import EmptyTable from './EmptyTable';
-class FetchData extends React.Component {
+class FetchRowData extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -42,4 +42,4 @@ class FetchData extends React.Component {
     );
   }
 }
-export default FetchData;
+export default FetchRowData;

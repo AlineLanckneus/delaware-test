@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FetchData from './FetchData';
+import FetchRowData from './FetchRowData';
 
 class Table extends Component {
   render() {
@@ -9,7 +9,7 @@ class Table extends Component {
           <thead></thead>
           <tbody>
             <tr>
-              <FetchData />
+              <FetchRowData />
             </tr>
           </tbody>
         </table>
