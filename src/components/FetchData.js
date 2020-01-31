@@ -19,7 +19,8 @@ class FetchData extends React.Component {
       'https://cors-anywhere.herokuapp.com/https://factory-application-dev.azurewebsites.net/home/testendpoint'
     )
       .then(response => response.json())
-      .then(result => this.setState({ data: result }));
+      .then(result => this.setState({ data: result }))
+      .then(count.push(data));
     this.setState({ displayEmptyTable: false });
     count.push(this.state.result);
   };
@@ -33,8 +34,8 @@ class FetchData extends React.Component {
         ) : (
           <InsertDataInTable
             data={data}
-              displayEmptyTable={displayEmptyTable}
-              counter={counter}
+            displayEmptyTable={displayEmptyTable}
+            counter={counter}
           />
         )}
         <div>
