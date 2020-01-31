@@ -6,23 +6,20 @@ class FetchData extends React.Component {
     super(props);
     this.state = {
       data: [],
-      displayEmptyTable: true,
-      counter: []
+      displayEmptyTable: true
     };
   }
   componentDidMount() {
     this.setState({ displayEmptyTable: true });
   }
   fetchDataHandle = () => {
-    let count = [];
     fetch(
       'https://cors-anywhere.herokuapp.com/https://factory-application-dev.azurewebsites.net/home/testendpoint'
     )
       .then(response => response.json())
-      .then(result => this.setState({ data: result }))
-      .then(count.push(data));
+      .then(result => this.setState({ data: result }));
+
     this.setState({ displayEmptyTable: false });
-    count.push(this.state.result);
   };
 
   render() {
