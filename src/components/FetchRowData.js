@@ -1,45 +1,47 @@
 import React from 'react';
 import InsertDataInTable from './InsertDataInTable';
-import EmptyTable from './EmptyTable';
+
 class FetchRowData extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
-      displayEmptyTable: true
+      rows: [],
+      dataCollection: []
     };
   }
-  componentDidMount() {
-    this.setState({ displayEmptyTable: true });
-  }
+  addToDataCollection = () => {
+    let currentArray = this.state.dataCollection;
+    this.state.rows.map(item => currentArray.push(item));
+    this.setState({
+      dataCollection: currentArray
+    });
+
+    console.log(this.state.dataCollection);
+  };
+
   fetchDataHandle = () => {
     fetch(
       'https://cors-anywhere.herokuapp.com/https://factory-application-dev.azurewebsites.net/home/testendpoint'
     )
       .then(response => response.json())
-      .then(result => this.setState({ data: result }));
-
-    this.setState({ displayEmptyTable: false });
+      .then(result => this.setState({ rows: result }));
+    this.addToDataCollection();
   };
 
   render() {
-    const { data, displayEmptyTable, counter } = this.state;
+    console.log(this.state);
     return (
-      <React.Fragment>
-        {this.state.displayEmptyTable ? (
-          <EmptyTable />
-        ) : (
-          <InsertDataInTable
-            data={data}
-            displayEmptyTable={displayEmptyTable}
-            counter={counter}
-          />
-        )}
-        <div>
-          <button onClick={this.fetchDataHandle}>Fetch Data</button>
-        </div>
-      </React.Fragment>
+      <div>
+        <ul>
+          {this.state.dataCollection.map(row => (
+            <li>{row}</li>
+          ))}
+          
+        </ul>
+        <button onClick={this.fetchDataHandle}>Fetch</button>
+      </div>
     );
   }
 }
+
 export default FetchRowData;

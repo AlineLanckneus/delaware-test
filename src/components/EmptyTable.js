@@ -1,14 +1,17 @@
 import React from 'react';
 
-const EmptyTable = () => {
+const EmptyTable = (props) => {
   return (
     <React.Fragment>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <tr>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <button onClick={props.click}></button>
     </React.Fragment>
   );
 };

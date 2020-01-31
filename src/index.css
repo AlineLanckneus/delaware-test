@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(216, 213, 213);
 }
 
 code {
@@ -18,7 +19,7 @@ code {
   justify-content: center;
 }
 
-table{
+table {
   width: 75%;
   margin: 0 auto;
   display: flex;
@@ -26,6 +27,15 @@ table{
 }
 td,
 th {
-  border: 1px solid #999;
+  border: 2px solid rgb(56, 56, 56);
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 1rem;
+}
+button {
+  background-color: #333;
+  font-size: 1rem;
+  border-radius: 10px;
+  color: white;
   padding: 1rem;
 }
