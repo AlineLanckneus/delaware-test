@@ -22,8 +22,10 @@ code {
 table {
   width: 75%;
   margin: 0 auto;
-  display: flex;
-  justify-content: center;
+  
+}
+.rowStyle{
+  display: inline;
 }
 td,
 th {
@@ -31,6 +33,7 @@ th {
   background-color: #fff;
   border-radius: 5px;
   padding: 1rem;
+  display: inline-flex;
 }
 button {
   background-color: #333;

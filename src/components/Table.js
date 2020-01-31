@@ -3,9 +3,9 @@ import FetchRowData from './FetchRowData';
 
 const Table = () => {
   return (
-    <div className='main'>
+    
       <FetchRowData />
-    </div>
+    
   );
 };
 

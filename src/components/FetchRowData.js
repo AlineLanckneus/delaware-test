@@ -27,19 +27,18 @@ class FetchRowData extends React.Component {
       .then(result => this.setState({ rows: result }));
     this.addToDataCollection();
   };
-
   render() {
     console.log(this.state);
     return (
-      <div>
-        <ul>
-          {this.state.dataCollection.map(row => (
+      <React.Fragment>
+        {this.state.dataCollection.map(row => (
+          <ul key={row} className='rowStyle'>
             <li>{row}</li>
-          ))}
-          
-        </ul>
+          </ul>
+        ))}
+
         <button onClick={this.fetchDataHandle}>Fetch</button>
-      </div>
+      </React.Fragment>
     );
   }
 }
