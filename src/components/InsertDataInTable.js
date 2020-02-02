@@ -1,16 +1,15 @@
 import React from 'react';
 
 const InsertDataInTable = props => {
-  let reversedData = [];
-  props.rows.reverse().map(item => reversedData.unshift(item));
+  
 
   return (
-    <tr>
+    <React.Fragment>
     
-      {reversedData.map(d => <td key={d}>{d}</td>)}
+      {props.rowData.map(rowCell => <td key={rowCell}>{rowCell}</td>)}
       
     
-    </tr>
+    </React.Fragment>
   );
 }
 export default InsertDataInTable;
