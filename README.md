@@ -1,20 +1,23 @@
 ## Delaware Technical Test
 
 I created 3 components in total.
-The main component is App.js which is also the only class component with state.
-Inside the App.js component the data is being fetched and stored in a larger array that collects all the arrays being fetched.
-The FetchRowData components consists of a button with an onClick event that fetches the data.
-The InsertDataInTable component takes care of rendering the elements of the array into the table cells.
+
+The main component is **App** which is also the only class component with state.
+
+Inside the App component the data is being fetched and stored in a larger array that collects all the arrays being fetched.
+
+The **FetchRowData** components consists of a button with an onClick event that fetches the data.
+
+The **InsertDataInTable** component takes care of rendering the elements of the array into the table cells.
 
 *The link provided was quite quickly out of use with a 502 error message.
 Therefore I was unfortunately not able to fully test my code.*
 
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created using facebook's **create-react-app.**
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory (= delaware-test), you can run:
 
 ### `yarn start`
 
