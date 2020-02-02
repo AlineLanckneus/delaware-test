@@ -5,18 +5,25 @@ class FetchRowData extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      rows: [],
-      dataCollection: []
+      rows: [], //rows represents every fetch of data so an array of 6 elements
+      dataCollection: [] //empty array in which we'll add the currently fetched array
     };
   }
+  //ideally we will slice the last 6 elements from the dataCollection array to render as html td elements
   addToDataCollection = () => {
     let currentArray = this.state.dataCollection;
-    this.state.rows.map(item => currentArray.push(item));
+    let currentRow = this.state.rows;
+    this.setState({
+      dataCollection: [...currentRow, currentRow]
+    });
+    this.state.dataCollection.slice(-6, this.state.dataCollection.length);
+    console.log(this.state.dataCollection);
+    /* this.state.rows.map(item => currentArray.push(item));
     this.setState({
       dataCollection: currentArray
     });
 
-    console.log(this.state.dataCollection);
+    console.log(this.state.dataCollection); */
   };
 
   fetchDataHandle = () => {
